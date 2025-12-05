@@ -380,7 +380,7 @@ void Almacenamiento::CrearObjetos() {
     cin >> tamaño;
     cout << "Dureza: ";
     cin >> dureza;
-    cout << "¿Está descompuesta? (1 = sí, 0 = no): ";
+    cout << "¿Está descompuesto? (1 = sí, 0 = no): ";
     cin >> descompuesto;
     cout << "Cantidad: ";
     cin >> cantidad;
@@ -398,7 +398,7 @@ void Almacenamiento::CrearObjetos() {
 }
 void Almacenamiento::BuscarObjeto(const vector<Almacenamiento>& lista) const {
     string buscado;
-    cout << "Ingresa el nombre de la Almacenamiento: ";
+    cout << "Ingresa el nombre del Almacenamiento: ";
     cin >> buscado;
     bool encontrado = false;
     for (size_t i = 0; i < lista.size(); i++) {
@@ -510,8 +510,8 @@ int main() {
         cout << "Bienvenido a tu Bodega doméstica" << endl;
         cout << "Elige a que sección queres acceder" << endl;
         cout << "1 - Decoraciones" << endl;
-        cout << "2 - Almacenamiento" << endl;
-        cout << "3 - Herramientas" << endl;
+        cout << "2 - Herramientas" << endl;
+        cout << "3 - Almacenamiento" << endl;
         cout << "4 - Salir" << endl;
         cin >> option;
         switch (option) {
@@ -580,25 +580,25 @@ int main() {
             }
             case 3:{
                 int opcionA = 0;
-                Herramientas temp;
+                Almacenamiento temp;
                 do {
                     temp.MenuSecundario();
                     cin >> opcionA;
                     switch (opcionA) {
                         case 1: {
-                            Herramientas nuevo;
+                            Almacenamiento nuevo;
                             nuevo.CrearObjetos();
-                            listaHerramientas.push_back(nuevo);
+                            listaAlmacenamiento.push_back(nuevo);
                             break;
                         }
                         case 2:
-                            temp.BuscarObjeto(listaHerramientas);
+                            temp.BuscarObjeto(listaAlmacenamiento);
                             break;
                         case 3:
-                            temp.LeerLista(listaHerramientas);
+                            temp.LeerLista(listaAlmacenamiento);
                             break;
                         case 4:
-                            temp.ModificarObjeto(listaHerramientas);
+                            temp.ModificarObjeto(listaAlmacenamiento);
                             break;
                         case 5:
                             cout << "Regresando al menú principal" << endl;
